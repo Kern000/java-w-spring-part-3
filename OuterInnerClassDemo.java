@@ -44,8 +44,13 @@ interface E {
 interface G {
     void troubleshoot();
 }
+// one class can implement many interfaces, but one class can only extend one class
 
-class F implements E, G {
+interface H extends G {
+    void log();
+}
+
+class F implements E, H {
     @Override
     public void show(){
         System.out.println("F implement E show");
@@ -59,6 +64,11 @@ class F implements E, G {
     @Override
     public void troubleshoot(){
         System.out.println("F implement G troubleshoot");
+    }
+
+    @Override
+    public void log(){
+        System.out.println("F implement H which also extends G");
     }
 }
 
@@ -103,7 +113,9 @@ public class OuterInnerClassDemo {
         obj4.config();
         // can use anonymous inner class to create abstract class instance
 
-        E obj5; //interface can put as type, but cannot instantiate, a class must implement it
+        E obj5; //interface can put as type, but cannot instantiate itself, a class must implement it, and instantiate the class;
+        obj5 = new F(); //obj5 now a class implementing E
+        obj5.config();
 
         F obj6 = new F();
         obj6.show();
@@ -113,6 +125,5 @@ public class OuterInnerClassDemo {
         System.out.println(E.serviceLevel);
     }
 }
-
 
 
