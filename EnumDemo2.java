@@ -1,3 +1,5 @@
+// Diff levels which annotations can be indicated - providing metadata to compiler
+
 @Deprecated
 enum Laptop{
 
