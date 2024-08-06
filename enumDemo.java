@@ -13,7 +13,7 @@ enum Status {
 // ea constant are objects of "Status" Enum here;
 // Thus ea object can be used
 
-public class enumDemo{
+public class EnumDemo{
     
     public static void main(String a[]){
 
