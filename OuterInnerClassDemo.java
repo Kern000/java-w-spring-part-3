@@ -38,6 +38,7 @@ interface E {
 // interface A is a type (though not a class);
 // Interface is just a design of something (abstract class is like blueprint structure)
 // variables in interface are by default final and static;
+// You only get the methods in implements, not the variables;
 
 class F implements E {
     @Override
