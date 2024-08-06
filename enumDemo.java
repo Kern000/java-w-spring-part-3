@@ -5,6 +5,8 @@ enum Status {
     PENDING,
     SUCCESS;
 
+    // enum can define variables, methods, constructors, but cannot extend enum
+    // By default enum obj extends enum class hence you get all those default methods
 }
 
 // Enums provide constants - Enum is a class
@@ -25,14 +27,54 @@ public class enumDemo{
         for (Status item : t){
             System.out.println(item + " : " + item.ordinal());          
         }
-        // enhanced for Loop, same as the below;
+        // enhanced for Loop
 
-        System.out.println(t[0]);
-        System.out.println(t[1]);
-        System.out.println(t[2]);
-        System.out.println(t[3]);
+        Status currentStatus = Status.PENDING;
+        // if (currentStatus == Status.RUNNING){
+        //     System.out.println("All is good");
+        // } else if (currentStatus == Status.PENDING){
+        //     System.out.println("Pending, may need to check");
+        // } else if (currentStatus == Status.SUCCESS){
+        //     System.out.println("Task completed");
+        // } else {
+        //     System.out.println("Failed to complete");
+        // }
+
+        // switch(currentStatus){
+        //     case RUNNING:
+        //         System.out.println("All is good");
+        //         break;
+        //     case PENDING:
+        //         System.out.println("Pending, check back in a while");
+        //         break;
+        //     case SUCCESS:
+        //         System.out.println("Done");
+        //         break;
+        //     case FAILED:
+        //         System.out.println("Task failed");
+        //         break;
+        //     default:
+        //         System.out.println("Uncaught exception");
+        //         break;
+        // }
+
+        // rule switch
+        switch(currentStatus){
+            case RUNNING -> System.out.println("All is good");
+            case PENDING -> System.out.println("Pending, check back in a while");
+            case SUCCESS -> System.out.println("Done");
+            case FAILED -> System.out.println("Task failed");
+            default -> System.out.println("Uncaught exception");
+        }
+
+        System.out.println(currentStatus.getClass());
+        System.out.println(currentStatus.getClass().getSimpleName());
+        System.out.println(currentStatus.getClass().getSuperclass());
+        System.out.println(currentStatus.getClass().getSuperclass().getSimpleName());
         
-
+    
+    
+    
     }
 
 }
