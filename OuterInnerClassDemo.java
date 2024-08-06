@@ -39,8 +39,13 @@ interface E {
 // Interface is just a design of something (abstract class is like blueprint structure)
 // variables in interface are by default final and static;
 // You only get the methods in implements, not the variables;
+// interface don't get memory in the heap (not object instance);
 
-class F implements E {
+interface G {
+    void troubleshoot();
+}
+
+class F implements E, G {
     @Override
     public void show(){
         System.out.println("F implement E show");
@@ -49,6 +54,11 @@ class F implements E {
     @Override
     public void config(){
         System.out.println("F implement E config");
+    }
+
+    @Override
+    public void troubleshoot(){
+        System.out.println("F implement G troubleshoot");
     }
 }
 
