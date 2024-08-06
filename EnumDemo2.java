@@ -1,3 +1,4 @@
+@Deprecated
 enum Laptop{
 
     MACBOOK(2000,1),
